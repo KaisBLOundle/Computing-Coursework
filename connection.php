@@ -11,7 +11,7 @@ try {
 
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
-    echo "Connected: " ;
+    
     #The computer will send a message when connected succesfully
     }
 catch(PDOException $e)

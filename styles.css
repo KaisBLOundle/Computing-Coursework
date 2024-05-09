@@ -1,0 +1,29 @@
+
+.redback{
+    background-color: rgb(152, 2, 44);
+}
+
+.white{
+    color: white;
+}
+
+.banner{
+    width: 25%;
+    height: 10%;
+    
+}
+
+.bannertext{
+    font-size: 150%;
+}
+
+.loginalign{
+    text-align: right;
+}
+
+.centre{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
