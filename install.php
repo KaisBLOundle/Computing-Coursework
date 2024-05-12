@@ -23,7 +23,7 @@ UserID  INT(3) UNSIGNED NOT NULL AUTO_INCREMENT ,
  Password  VARCHAR(30) NOT NULL DEFAULT 'Password' ,
  Username  VARCHAR(30) NOT NULL , 
  Year  VARCHAR(30) NOT NULL , 
- Balance  DECIMAL(6,2) NOT NULL , 
+ Balance  DECIMAL(6,2) NOT NULL DEFAULT 0.00, 
  Role  TINYINT(1) NOT NULL DEFAULT 0 , 
 PRIMARY KEY ( UserID ));");
 $stmt->execute();

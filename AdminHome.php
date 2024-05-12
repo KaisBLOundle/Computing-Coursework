@@ -22,7 +22,7 @@
     <img class="banner" src="CrosbyBanner.png" alt="OundleChoralSociety">
     </div>
     <ul class="nav navbar-nav right ">
-    <li> <a  href="#about"><p class="white bannertext">Home</p> </a></li>
+    <li> <a  href="AdminHome.php"><p class="white bannertext">Home</p> </a></li>
     <li><a  href="#concerts&events"><p class="white bannertext">View Students</p></a></li>
     <li><a  href="#members"><p class="white bannertext">Confirm Transactions</p></a></li>
     <li><a  href="#contactus"><p class="white bannertext loginalign">Login</p></a></li>
@@ -33,17 +33,24 @@
     
       
 </body>
+<!-- Buttons for admin-->
+
+<!-- Link to  add students page-->
   <div class="container-fluid centre">
-      <a href="students.php" ><img class="banner " src="Addstudents.png" alt="addstudents"></a>
+      <a href="students.php" ><img class="addbutton padding " src="Addstudents.png" alt="addstudents"></a>
+    </div>
+  <!-- Link to  remove students page-->
+    <div class="container-fluid centre">
+      <a href="removestudents.php" ><img class="addbutton padding" src="Removestudents.png" alt="removestudents"></a>
+    </div>
+  <!-- Link to  view students page-->
+    <div class="container-fluid centre">
+      <a href="viewstudents.php" ><img class="addbutton padding" src="Viewstudents.png" alt="Viewstudents"></a>
     </div>
 
-
+   
+    <!-- Link to transactions page-->
     <div class="container-fluid centre">
-      <a href="students.php" ><img class="banner " src="Addstudents.png" alt="addstudents"></a>
-    </div>
-
-
-    <div class="container-fluid centre">
-      <a href="students.php" ><img class="banner " src="Addstudents.png" alt="addstudents"></a>
+      <a href="confirmtransactions.php" ><img class="addbutton padding" src="Confirmtrans.png" alt="Confirm Transactions"></a>
     </div>
 </html>
