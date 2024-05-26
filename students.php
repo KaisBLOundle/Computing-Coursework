@@ -46,7 +46,7 @@
         <input   type="radio"  id="Year" name="Year"  value="Thirdform"><p>Third Form</p>
         <input  id="Year" type="radio" value="Fourthform" name="Year"><p>Fourth Form</p>
         <input  id="Year" type="radio" value="Fifthform" name="Year"  ><p>Fifth Form</p>
-        <input  id="Year" type="radio" value="l6thform" name="Year"  ><p>Lower Sixth </p>
+        <input  id="Year" type="radio" value="L6thform" name="Year"  ><p>Lower Sixth </p>
         <input  id="Year" type="radio" value="U6thform" name="Year" ><p>Upper Sixth </p>
         
         <!-- This will submit the values to the next page-->

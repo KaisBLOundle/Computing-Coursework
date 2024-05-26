@@ -31,8 +31,9 @@
 </nav>
 
 </body>
+<h1> Remove Students</h1>
     <!-- displays the tbl user as a table -->
-<table  border="1" cellpadding="3"  cellspacing="0 "class="centrepad">
+    <table  border="1" cellpadding="3"  cellspacing="0 "class="centrepad">
 <td class="tblheader white" >Forename</td>
 <td class="tblheader white">Surename</td>
 <td class="tblheader"></td>
@@ -42,8 +43,14 @@ $stmt = $conn->prepare("SELECT * FROM TblUsers");
 $stmt->execute();
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
 {
+#creates a table with all of the users in the database 
 echo("<tr>");
-echo("<td class='tblbody'>".$row["Forename"]."</td>".' '."<td class='tblbody'>".$row["Surname"]."</td>".'<td class="tblbody"><form action="studentbalance.php" method="post" class="inputbox" ><input class="removetext"type="submit" value="REMOVE"></form></td>'."<br>");
+echo("<td>".$row["Forename"]."</td>".' '."<td>".$row["Surname"]."</td>");
+echo("<td>
+<form action='remove.php' method='post' class='inputbox' >
+<input class='removetext' type='submit' value='REMOVE'>");
+echo("<input type='hidden' value=".$row["UserID"]." name='UserID' ></form></td><br>");
+#creates a hidden value assigned to each of the rows that are submitted to the next page
 }
 ?>
 </table>

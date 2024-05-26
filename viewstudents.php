@@ -43,8 +43,14 @@ $stmt = $conn->prepare("SELECT * FROM TblUsers");
 $stmt->execute();
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
 {
+  
 echo("<tr>");
-echo("<td>".$row["Forename"]."</td>".' '."<td>".$row["Surname"]."</td>".'<td><form action="studentbalance.php" method="post" class="inputbox" ><input type="submit" value="View Balance"></form></td>'."<br>");
+echo("<td>".$row["Forename"]."</td>".' '."<td>".$row["Surname"]."</td>");
+echo("<td>
+<form action='studentbalance.php' method='post' class='inputbox' >
+<input type='submit' value='View Balance'>");
+echo("<input type='hidden' value=".$row["UserID"]." name='UserID' ></form></td><br>");
+
 }
 ?>
 </table>
