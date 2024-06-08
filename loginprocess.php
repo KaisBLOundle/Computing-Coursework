@@ -12,7 +12,8 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
     if($row['Password']== $_POST['Pword']){
     #checks if password inputted matches the password inputted on the previous page
         $_SESSION['ID']=$row["UserID"];
-        #sets the users id as a session variable
+        $_SESSION['balance']=$row["Balance"];
+        #sets the users id and balance as a session variable
         
         if($row['Role']== "1"){
             header('Location: AdminHome.php');

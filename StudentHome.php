@@ -31,6 +31,31 @@
 </div>
 </nav>
 
-<div class="container-fluid " >
+<?php
+  session_start();
+  array_map("htmlspecialchars", $_POST);
+  include_once("connection.php");
+ 
+  # this select the users detials that match with the students userID
+  
+  $stmt = $conn->prepare("SELECT * FROM TblUsers WHERE UserID LIKE :userID");
+  $stmt->bindParam(':userID', $_SESSION["ID"]);
+  $stmt->execute();
 
+  while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
+  {
+  echo('<h1> Hello '.$row["Forename"].' '.$row["Surname"].'</h1><br>');
+  }
+?>
+
+<div class="container-fluid centre">
+    <a href="withdraw.php" ><img class="addbutton padding " src="withdraw.png" alt="withdraw"></a>
 </div>
+
+<div class="container-fluid centre">
+    <a href="deposit.php" ><img class="addbutton padding" src="deposit.png" alt="deposit"></a>
+</div>
+
+
+
+</body>
