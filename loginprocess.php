@@ -13,11 +13,13 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
     #checks if password inputted matches the password inputted on the previous page
         $_SESSION['ID']=$row["UserID"];
         $_SESSION['balance']=$row["Balance"];
+        $_SESSION['year']=$row["Year"];
         #sets the users id and balance as a session variable
         
         if($row['Role']== "1"){
             header('Location: AdminHome.php');
             # if the user is an admin the login page directs them to the admin homepage
+            
         }else{
             header('Location: StudentHome.php');#otherwise they are directed to the student home page
         }

@@ -53,10 +53,10 @@ $stmt->closeCursor();
 
 #creates balance track table
 $stmt = $conn->prepare("DROP TABLE IF EXISTS tblbalancetrack;CREATE TABLE  housebank . 
-tblbalancetrack  ( UserID  INT NOT NULL ,  Balance  DECIMAL(6,2) NOT NULL ,  
+tblbalancetrack  ( BalancetrackID INT(3) UNSIGNED NOT NULL AUTO_INCREMENT ,UserID  INT NOT NULL ,  Balance  DECIMAL(6,2) NOT NULL ,  
 Year  VARCHAR(10) NOT NULL , 
  Date  DATE NOT NULL , 
- PRIMARY KEY ( UserID )) ENGINE = InnoDB; ");
+ PRIMARY KEY ( BalancetrackID )) ENGINE = InnoDB; ");
  echo("Balance Table Added");
  $stmt->execute();
  $stmt->closeCursor();

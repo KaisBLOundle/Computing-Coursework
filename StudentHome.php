@@ -14,6 +14,7 @@
   
 </head>
 <body>
+  
 
 <!-- User Nav bar with links to all of the subpages for the User-->
 <nav class="navbar navbar-inverse redback  " >
@@ -31,7 +32,20 @@
 </div>
 </nav>
 
-<?php
+
+
+
+
+<div class="row">
+<div class="col "> 
+  
+  <a href="Studentgraph.php"><img class="addbutton rightpad" src="StudentGraph.png" alt=""></a>
+</div>
+
+
+  <div class="col text-center">
+  
+  <?php
   session_start();
   array_map("htmlspecialchars", $_POST);
   include_once("connection.php");
@@ -46,14 +60,62 @@
   {
   echo('<h1> Hello '.$row["Forename"].' '.$row["Surname"].'</h1><br>');
   }
+  
 ?>
-
-<div class="container-fluid centre">
-    <a href="withdraw.php" ><img class="addbutton padding " src="withdraw.png" alt="withdraw"></a>
+  
+<div class="container-fluid ">
+    <a href="withdraw.php" ><img class="addbutton  " src="withdraw.png" alt="withdraw"></a>
 </div>
 
-<div class="container-fluid centre">
+<div class="container-fluid ">
     <a href="deposit.php" ><img class="addbutton padding" src="deposit.png" alt="deposit"></a>
+</div>
+<br>
+
+
+<div class="container-fluid ">
+  <table  border="1" cellpadding="3"  cellspacing="0 "class="centrepad">
+  <td class="tblheader white" >Date</td>
+  <td class="tblheader white">Amount</td>
+  <td class="tblheader white"> Description</td> <!-- headers for the table-->
+  <td class="tblheader white"> Type</td>
+  <td class="tblheader white"> Confirmed</td>
+  <?php
+    include_once('connection.php'); 
+    $stmt = $conn->prepare("SELECT * FROM TblTransactions WHERE UserID LIKE :id "); # selects the transactions from the table that match the userID
+    $stmt->bindParam(':id', $_SESSION["ID"]);
+    $stmt->execute();
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
+    {
+      if($row['Type']== "1"){
+        $type=("Withdrawal");
+        # if the value of type is 1 then it will be displayed as a withdrawel in the table
+        
+    }else{
+        $type=("Deposit");#otherwise it will displayed as 0
+    }
+    
+    if($row['Confirmed']== "0"){
+      $confirmed=("False");
+      # if the value of the confirmed variable is 0 then it will displayed as false 
+      
+  }else{
+      
+        $confirmed=("True");#otherwise it will be displayed as true 
+      
+      
+  }
+
+    #creates a table with all of the users transactions in the database 
+    echo("<tr>");
+    echo("<td>".$row["Date"]."</td>".' '."<td>".$row["Amount"]."</td>".' '."<td>".$row["Description"]."</td>".' '."<td>".$type."</td>".' '."<td>".$confirmed."</td>");
+    
+    
+    }
+  ?>
+  </table>
+</div>
+</div>
 </div>
 
 

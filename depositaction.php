@@ -41,8 +41,21 @@
     $stmt = $conn->prepare("UPDATE TblUsers SET Balance=:newbalance");
     $stmt->bindParam(':newbalance', $newbalance);
     $stmt->execute();
+    unset($_SESSION['balance']);
+    session_regenerate_id();
+    $_SESSION['balance']= $newbalance;
+    unset($newbalance);  
 
-$conn=null;
+
+    #Saves a copy of the users balance to balance track
+    $stmt = $conn->prepare("INSERT INTO tblbalancetrack(UserID,Balance,Year,Date)VALUES (:id,:balance,:year,:date)");
+    $stmt->bindParam(':id', $_SESSION["ID"]);
+    $stmt->bindParam(':balance', $_SESSION["balance"]);
+    $stmt->bindParam(':year', $_SESSION["year"]);
+    $stmt->bindParam(':date', $_POST["date"]);
+    $stmt->execute();
+
+  $conn=null;
             
 ?>
 </body>
