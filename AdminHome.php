@@ -25,7 +25,7 @@
     <li> <a  href="AdminHome.php"><p class="white bannertext">Home</p> </a></li>
     <li><a  href="#concerts&events"><p class="white bannertext">View Students</p></a></li>
     <li><a  href="#members"><p class="white bannertext">Confirm Transactions</p></a></li>
-    <li><a  href="#contactus"><p class="white bannertext loginalign">Login</p></a></li>
+    <li><a  href="login.php"><p class="white bannertext loginalign">Login</p></a></li>
     </ul>
 </div>
 </nav>
@@ -52,5 +52,9 @@
     <!-- Link to transactions page-->
     <div class="container-fluid centre">
       <a href="confirmtransactions.php" ><img class="addbutton padding" src="Confirmtrans.png" alt="Confirm Transactions"></a>
+    </div>
+    <!-- Link to transactions page-->
+    <div class="container-fluid centre">
+      <a href="housebalance.php" ><img class="addbutton padding" src="Housebank.png" alt="Confirm Transactions"></a>
     </div>
 </html>

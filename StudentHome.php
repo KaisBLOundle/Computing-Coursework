@@ -27,7 +27,7 @@
     <li><a  href="#concerts&events"><p class="white bannertext">Deposit</p></a></li>
     <li><a  href="#members"><p class="white bannertext">View Balance</p></a></li>
     <li><a  href="#contactus"><p class="white bannertext loginalign">Change Password</p></a></li>
-    <li><a  href="#contactus"><p class="white bannertext loginalign">Login</p></a></li>
+    <li><a  href="login.php"><p class="white bannertext loginalign">Login</p></a></li>
     </ul>
 </div>
 </nav>

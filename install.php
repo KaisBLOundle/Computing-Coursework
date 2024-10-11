@@ -61,7 +61,11 @@ Year  VARCHAR(10) NOT NULL ,
  $stmt->execute();
  $stmt->closeCursor();
  
+ #creates bank account table
+ $stmt = $conn->prepare("DROP TABLE IF EXISTS tblbalancetrack;CREATE TABLE  housebank . 
+ tblbankaccount (BankBalance  INT NOT NULL, CashBalance INT NOT NULL)");
 
+ echo("Bank Account Table Added");
 
 
 ?>

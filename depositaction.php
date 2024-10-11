@@ -35,7 +35,7 @@
     #creates a new variable of the users balance
     
     $newbalance=($_SESSION['balance']+$_POST['deposit']);
-    
+    $newcash=($_SESSION['Cash']+$_POST['deposit']);
 
     #updates the users balance in tblusers
     $stmt = $conn->prepare("UPDATE TblUsers SET Balance=:newbalance");
@@ -55,6 +55,11 @@
     $stmt->bindParam(':date', $_POST["date"]);
     $stmt->execute();
 
+
+    #updates the amount of money in the housesafe
+    $stmt = $conn->prepare("UPDATE  tblbankaccount SET CashBalance = :cashbalance");
+    $stmt->bindParam(':cashbalance', $newcash);
+    $stmt->execute();
   $conn=null;
             
 ?>

@@ -63,6 +63,13 @@
     $stmt->bindParam(':date', $_POST["date"]);
     $stmt->execute();
 
+
+    $newcash=($_SESSION['Cash']-$_POST['withdraw']);
+    
+    #updates the amount of money in the housesafe
+    $stmt = $conn->prepare("UPDATE  tblbankaccount SET CashBalance = :cashbalance");
+    $stmt->bindParam(':cashbalance', $newcash);
+    $stmt->execute();
   $conn=null;
             
 ?>
