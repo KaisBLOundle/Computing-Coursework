@@ -25,9 +25,9 @@
     </div>
     <ul class="nav navbar-nav right ">
     <li> <a  href="AdminHome.php"><p class="white bannertext">Home</p> </a></li>
-    <li><a  href="#concerts&events"><p class="white bannertext">View Students</p></a></li>
-    <li><a  href="#members"><p class="white bannertext">Confirm Transactions</p></a></li>
-    <li><a  href="#contactus"><p class="white bannertext loginalign">Login</p></a></li>
+    <<li><a  href="viewstudents.php"><p class="white bannertext">View Students</p></a></li>
+    <li><a  href="confirmtransactions.php"><p class="white bannertext">Confirm Transactions</p></a></li>
+    <li><a  href="login.php"><p class="white bannertext loginalign">Login</p></a></li>
     </ul>
 </div>
 </nav>

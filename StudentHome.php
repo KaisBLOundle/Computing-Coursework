@@ -96,19 +96,25 @@
     }
     
     if($row['Confirmed']== "0"){
-      $confirmed=("False");
+      $confirmed=("<td ><p class=''>False</p></td>");
       # if the value of the confirmed variable is 0 then it will displayed as false 
       
-  }else{
+  }
+  elseif($row['Confirmed']== "2"){
       
-        $confirmed=("True");#otherwise it will be displayed as true 
+    $confirmed=("<td ><p class='red'>Blocked</p></td>");#displayed as blocked
+  
+  
+}  
+  else{
       
+        $confirmed=("<td class='green'>True</td>");#otherwise it will be displayed as true 
       
   }
 
     #creates a table with all of the users transactions in the database 
     echo("<tr>");
-    echo("<td>".$row["Date"]."</td>".' '."<td>".$row["Amount"]."</td>".' '."<td>".$row["Description"]."</td>".' '."<td>".$type."</td>".' '."<td>".$confirmed."</td>");
+    echo("<td>".$row["Date"]."</td>".' '."<td>".$row["Amount"]."</td>".' '."<td>".$row["Description"]."</td>".' '."<td>".$type."</td>".' '.$confirmed);
     
     
     }

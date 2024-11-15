@@ -23,9 +23,9 @@
     </div>
     <ul class="nav navbar-nav right ">
     <li> <a  href="AdminHome.php"><p class="white bannertext">Home</p> </a></li>
-    <li><a  href="#concerts&events"><p class="white bannertext">View Students</p></a></li>
-    <li><a  href="#members"><p class="white bannertext">Confirm Transactions</p></a></li>
-    <li><a  href="#contactus"><p class="white bannertext loginalign">Login</p></a></li>
+    <li><a  href="viewstudents.php"><p class="white bannertext">View Students</p></a></li>
+    <li><a  href="confirmtransactions.php"><p class="white bannertext">Confirm Transactions</p></a></li>
+    <li><a  href="login.php"><p class="white bannertext loginalign">Login</p></a></li>
     </ul>
 </div>
 </nav>
@@ -33,6 +33,7 @@
 <h1> Add Student</h1>
 
 <!-- The input boxes that will submit the new users information to the next page-->
+<br>
 <form action="addstudents.php" method="post" class="inputbox">
         
         
@@ -40,14 +41,14 @@
         <input type="text"  id="forename" name="Forename"  size="27" placeholder="Enter Students First Name" min="0"  max="30"><br><br>
         <input type="text" id="surname" name="Surname" size="27" placeholder="Enter Students Surname" min="0"  max="30" ><br><br>
         <input type="text" id="username" name="Username" size="27" placeholder="Enter Students email up until the @" min="0"  max="30"><br><br>
-        
+      
         <!-- This will allow the User to select what year the student will be in-->
         <label for="Year">Enter Students Year</label><br>
-        <input   type="radio"  id="Year" name="Year"  value="Thirdform"><p>Third Form</p>
-        <input  id="Year" type="radio" value="Fourthform" name="Year"><p>Fourth Form</p>
-        <input  id="Year" type="radio" value="Fifthform" name="Year"  ><p>Fifth Form</p>
-        <input  id="Year" type="radio" value="L6thform" name="Year"  ><p>Lower Sixth </p>
-        <input  id="Year" type="radio" value="U6thform" name="Year" ><p>Upper Sixth </p>
+        <input   type="radio"  id="Year" name="Year"  value="Thirdform"><p>Third Form</p><br>
+        <input  id="Year" type="radio" value="Fourthform" name="Year"><p>Fourth Form</p><br>
+        <input  id="Year" type="radio" value="Fifthform" name="Year"  ><p>Fifth Form</p><br>
+        <input  id="Year" type="radio" value="L6thform" name="Year"  ><p>Lower Sixth </p><br>
+        <input  id="Year" type="radio" value="U6thform" name="Year" ><p>Upper Sixth </p><br>
         
         <!-- This will submit the values to the next page-->
         <input type="submit" value="Add Student">
@@ -55,3 +56,4 @@
 </body>
 
 </html>
+<a href="importstudent.php"><img src="import.png" alt=""></a>
