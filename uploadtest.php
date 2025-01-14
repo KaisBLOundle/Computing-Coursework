@@ -24,7 +24,7 @@
         
 
         
-        Image: <input type="file" id="piccy" name="piccy" accept="image/*"><br>
+        Image: <input type="file" id="piccy" name="piccy" ><br>
 
         
         <!-- This will submit the values to the next page-->

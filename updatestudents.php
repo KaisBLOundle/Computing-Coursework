@@ -1,50 +1,31 @@
-<?php
- $stmt= $conn->prepare("SELECT * FROM TblUsers");
- $stmt->execute();
-for i in_table()
-?>
+
 <?php
     array_map("htmlspecialchars", $_POST);
     include_once("connection.php");
     
     #this will choose what year will be inputted into the database depending on what the user selected on the last page.
-    switch($_POST["Year"]){
-        case "Thirdform":
-            $year="Third";
-            break;
-        #This would make the user be in Third Form in the table
-        
-        case "Fourthform":
-            $year="Fourth";
-            
-            break; 
+    
+    $stmt = $conn->prepare("UPDATE  tblusers SET Year = Year + 1 WHERE Role = 0 ");
+    $stmt->execute(); 
 
-        case "Fifthform":
-            $year="Fifth";
-            
-            break;
-            
-        case "L6thform":
-            $year="Lower Sixth";
-            
-            break; 
-        
-        case "U6thform":
-            $year="Upper Sixth";
-            
-            break; 
-
+    
+     
+    $stmt = $conn->prepare("SELECT * FROM tblusers WHERE Year = 8 ");
+    $stmt->execute(); 
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+        echo("deleting User:");
+        print_r($row);
+        $stmt2 = $conn->prepare("DELETE FROM tblusers WHERE UserID LIKE :userid");
+        $stmt2->bindParam(":userid", $row["UserID"]);
+        $stmt2->execute();
+        $stmt2 = $conn->prepare("DELETE FROM tbltransactions WHERE UserID LIKE :userid");
+        $stmt2->bindParam(":userid", $row["UserID"]);
+        $stmt2->execute();
+        $stmt2 = $conn->prepare("DELETE FROM tblbalancetrack WHERE UserID LIKE :userid");
+        $stmt2->bindParam(":userid", $row["UserID"]);
+        $stmt2->execute();
     }
-
-    #This uses Sql to insert the inputted variables in the TblUsers        
-    $stmt = $conn->prepare("INSERT INTO TblUsers (UserID,Forename,Surname,Password,Username,Balance,Year,Role)VALUES (null,:forename,:surname,default,:username,default,:year,default)");
-
-    #This sets the code post variables as variables that can be inserted into the table
-    $stmt->bindParam(':forename', $_POST["Forename"]);
-    $stmt->bindParam(':surname', $_POST["Surname"]);
-    $stmt->bindParam(':username', $_POST["Username"]);
-    $stmt->bindParam(':year', $year);
-    $stmt->execute();
+    
 $conn=null;
-            
+
 ?>
